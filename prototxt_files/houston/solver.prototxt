@@ -1,0 +1,25 @@
+# The train/test net protocol buffer definition
+net: "./prototxt_files/houston/train.prototxt"
+# test_iter specifies how many forward passes the test should carry out.
+# In the case of indian_pines, we have test batch size 50 and 286 test iterations,
+# covering the full 14279=50*286 testing images; train smaples: 750
+test_iter: 286   
+# Carry out testing every 1000 training iterations.
+test_interval: 1000
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.005
+# The learning rate policy
+lr_policy: "multistep"
+gamma: 0.1
+# Display every 100 iterations
+display: 1000
+# The maximum number of iterations
+max_iter: 200000
+# snapshot intermediate results
+snapshot: 1000
+snapshot_prefix: "./snapshot/houston/"
+# solver mode: CPU or GPU
+solver_mode: GPU
+
